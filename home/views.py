@@ -6,8 +6,9 @@ from accounts.models import User_Profile_Picture
 from django.core.exceptions import ObjectDoesNotExist
 
 def Home(request):
-    return render(request, 'home/index.html')
-
+    # return render(request, 'home/index.html')
+    return redirect('accounts/login')
+    
 @login_required(login_url='/accounts/login')
 def Deashboard(request):
     smtpedit = SmtpBackend.objects.filter(user=request.user)
