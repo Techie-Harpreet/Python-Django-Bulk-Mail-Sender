@@ -1,0 +1,559 @@
+{% extends 'home/base/base.html' %}
+
+{% block body %}
+{% load static  %}
+<div class="wrapper">
+    <div class="header--section">
+        <div class="header--topbar">
+            <div class="container">
+                <ul class="nav social float--left">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                </ul>
+                <ul class="nav cart float--right">
+                    <li><a href="cart.html"><i class="fa fm fa-shopping-basket"></i>(<span>3</span>)</a></li>
+                </ul>
+                <ul class="nav register float--right">
+                    {% if user.is_authenticated %}
+                    <li> <a href="{% url 'Deashboard' %}">Go Dashboard</a> <span class="divider">/</span> <a
+                        href="/accounts/logout"><i class="fa fm fa-user-o"></i>Logout</a> </li>
+                    {% else %}
+                    <li> <a href="/accounts/register"><i class="fa fm fa-key"></i>Signup</a> <span class="divider">/</span> <a
+                            href="/accounts/login"><i class="fa fm fa-user-o"></i>Login</a> </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        <nav class="header--navbar navbar" data-trigger="sticky">
+            <div class="container">
+                <div class="navbar-header">
+                    <div class="header--btn float--right hidden-md hidden-lg hidden-xxs"> <a
+                            href="free-analysis.html" class="btn btn-default">Get Free Analysis</a> </div><button
+                        type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#headerNav" aria-expanded="false" aria-controls="headerNav"> <span
+                            class="sr-only">Toggle Navigation</span> <span class="icon-bar"></span> <span
+                            class="icon-bar"></span> <span class="icon-bar"></span> </button> <a href="index-2.html"
+                        class="navbar-brand"> <img src="img/logo.png" alt="SEOCrack Logo"> </a>
+                </div>
+                <div class="header--btn float--right hidden-sm hidden-xs"> <a href="free-analysis.html"
+                        class="btn btn-default">Get Free Analysis</a> </div>
+                <div id="headerNav" class="navbar-collapse collapse float--right">
+                    <ul class="header--nav-links nav navbar-right">
+                        <li class="active"><a href="index-2.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                role="button" aria-haspopup="true" aria-expanded="false">Services<i
+                                    class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="service-details.html">Service Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown megamenu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                role="button" aria-haspopup="true" aria-expanded="false">Pages<i
+                                    class="fa fa-angle-down"></i></a>
+                            <div class="dropdown-menu" data-bg-img="img/header-img/megamenu-bg.jpg">
+                                <ul class="nav col-md-2 col-md-offset-4 col-sm-3">
+                                    <li class="dropdown-header underline">Pages</li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="team.html">Team</a></li>
+                                    <li><a href="testimonials.html">Testimonials</a></li>
+                                    <li><a href="pricing.html">Pricing</a></li>
+                                    <li><a href="free-analysis.html">Free Analysis</a></li>
+                                </ul>
+                                <ul class="nav col-md-2 col-sm-3">
+                                    <li class="dropdown-header underline">Services</li>
+                                    <li><a href="services.html">Services</a></li>
+                                    <li><a href="service-details.html">Services Details</a></li>
+                                    <li><a href="case-studies.html">Case Studies</a></li>
+                                    <li><a href="case-study-details.html">Case Study Details</a></li>
+                                    <li><a href="coming-soon.html">Coming Soon</a></li>
+                                </ul>
+                                <ul class="nav col-md-2 col-sm-3">
+                                    <li class="dropdown-header underline">Shop</li>
+                                    <li><a href="shop.html">Shop</a></li>
+                                    <li><a href="shop-details.html">Shop Details</a></li>
+                                    <li><a href="cart.html">Cart</a></li>
+                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="404.html">404</a></li>
+                                </ul>
+                                <ul class="nav col-md-2 col-sm-3">
+                                    <li class="dropdown-header underline">Blog</li>
+                                    <li><a href="blog-sidebar-right.html">Blog Sidebar Right</a></li>
+                                    <li><a href="blog-sidebar-left.html">Blog Sidebar Left</a></li>
+                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                role="button" aria-haspopup="true" aria-expanded="false">Shop<i
+                                    class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="shop.html">Shop</a></li>
+                                <li><a href="shop-details.html">Shop Details</a></li>
+                                <li><a href="cart.html">Cart</a></li>
+                                <li><a href="checkout.html">Checkout</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                role="button" aria-haspopup="true" aria-expanded="false">Blog<i
+                                    class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="blog-sidebar-right.html">Blog Sidebar Right</a></li>
+                                <li><a href="blog-sidebar-left.html">Blog Sidebar Left</a></li>
+                                <li><a href="blog-details.html">Blog Details</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="banner--section bg--color-theme">
+        <div class="banner--slider owl-carousel pd--100-0-70" data-owl-dots="true">
+            <div class="banner--item">
+                <div class="container">
+                    <div class="row row--vc">
+                        <div class="col-md-6">
+                            <div class="banner--content">
+                                <div class="title">
+                                    <h1 class="h1">Rank On Top &amp; Stay On Top With SEO Crack</h1>
+                                </div>
+                                <div class="desc">
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the
+                                        majority have suffered alteration in some form, by injected humour, or
+                                        randomised sage of Lorem Ipsum, you need to be sure there isn't anything.
+                                    </p>
+                                </div>
+                                <div class="button"> <a href="#" class="btn btn-default active">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 col-xxs-12">
+                            <div class="banner--img"> <img src="{% static 'img/banner-img/slider-img-01.png' %}" alt=""> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="banner--item">
+                <div class="container">
+                    <div class="row row--vc">
+                        <div class="col-md-6 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 col-xxs-12">
+                            <div class="banner--img"> <img src="{% static 'img/banner-img/slider-img-02.png' %}" alt=""> </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="banner--content">
+                                <div class="title">
+                                    <h1 class="h1">Rank On Top &amp; Stay On Top With SEO Crack</h1>
+                                </div>
+                                <div class="desc">
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the
+                                        majority have suffered alteration in some form, by injected humour, or
+                                        randomised sage of Lorem Ipsum, you need to be sure there isn't anything.
+                                    </p>
+                                </div>
+                                <div class="button"> <a href="#" class="btn btn-default active">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="banner--item">
+                <div class="container">
+                    <div class="row row--vc">
+                        <div class="col-md-6">
+                            <div class="banner--content">
+                                <div class="title">
+                                    <h1 class="h1">Rank On Top &amp; Stay On Top With SEO Crack</h1>
+                                </div>
+                                <div class="desc">
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the
+                                        majority have suffered alteration in some form, by injected humour, or
+                                        randomised sage of Lorem Ipsum, you need to be sure there isn't anything.
+                                    </p>
+                                </div>
+                                <div class="button"> <a href="#" class="btn btn-default active">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 col-xxs-12">
+                            <div class="banner--img"> <img src="{% static 'img/banner-img/slider-img-03.png' %}" alt=""> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="services--section pd--100-0">
+        <div class="container">
+            <div class="section--title">
+                <h2 class="h2">Services We Offer</h2>
+            </div>
+            <div class="row AdjustRow">
+                <div class="col-md-4 col-xs-6 col-xxs-12">
+                    <div class="service--item">
+                        <div class="header">
+                            <div class="icon"> <img src="{% static 'img/services-img/icon-01.png' %}" alt=""> </div>
+                            <div class="title">
+                                <h3 class="h4"><a href="service-details.html">Search Engine Optimization</a></h3>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-6 col-xxs-12">
+                    <div class="service--item">
+                        <div class="header">
+                            <div class="icon"> <img src="{% static 'img/services-img/icon-02.png' %}" alt=""> </div>
+                            <div class="title">
+                                <h3 class="h4"><a href="service-details.html">Social Media Marketing</a></h3>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-6 col-xxs-12">
+                    <div class="service--item">
+                        <div class="header">
+                            <div class="icon"> <img src="{% static 'img/services-img/icon-03.png' %}" alt=""> </div>
+                            <div class="title">
+                                <h3 class="h4"><a href="service-details.html">Pay-Per-Click Advertising</a></h3>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-6 col-xxs-12">
+                    <div class="service--item">
+                        <div class="header">
+                            <div class="icon"> <img src="{% static 'img/services-img/icon-04.png' %}" alt=""> </div>
+                            <div class="title">
+                                <h3 class="h4"><a href="service-details.html">Website Development</a></h3>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-6 col-xxs-12">
+                    <div class="service--item">
+                        <div class="header">
+                            <div class="icon"> <img src="{% static 'img/services-img/icon-05.png' %}" alt=""> </div>
+                            <div class="title">
+                                <h3 class="h4"><a href="service-details.html">Content Marketing</a></h3>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-6 col-xxs-12">
+                    <div class="service--item">
+                        <div class="header">
+                            <div class="icon"> <img src="{% static 'img/services-img/icon-06.png' %}" alt=""> </div>
+                            <div class="title">
+                                <h3 class="h4"><a href="service-details.html">Conversion Optimization</a></h3>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section--footer text-center"> <a href="services.html" class="btn btn-default">View All
+                    Services</a> </div>
+        </div>
+    </div>
+    <div class="pricing--section pd--100-0-40 bg--overlay-95" data-bg-img="img/pricing-img/bg.jpg">
+        <div class="container">
+            <div class="section--title">
+                <h2 class="h2">Pricing Plan</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2 col-xxs-12">
+                    <div class="pricing--item">
+                        <div class="title">
+                            <h3 class="h3">Standard Plan</h3>
+                            <h4 class="h4">($29.99/Month)</h4>
+                        </div>
+                        <div class="icon"> <img src="{% static 'img/pricing-img/icon-01.png' %}" alt=""> </div>
+                        <div class="features">
+                            <ul class="nav">
+                                <li>Number of keyphrases optimized<br><span>(Up to 80)</span></li>
+                                <li><i class="fa fa-check"></i>Web server and on-page analysis &amp; reporting them
+                                    on your site</li>
+                                <li><i class="fa fa-check"></i>Meta tags <span>(Title &amp; description)</span>
+                                    Website conversion analysis implement <span>(Custom)</span></li>
+                            </ul>
+                        </div>
+                        <div class="action"> <a href="#" class="btn btn-default">Start Today</a> </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2 col-xxs-12">
+                    <div class="pricing--item active">
+                        <div class="title">
+                            <h3 class="h3">Enterprise Plan</h3>
+                            <h4 class="h4">($49.99/Month)</h4>
+                        </div>
+                        <div class="icon"> <img src="{% static 'img/pricing-img/icon-02.png' %}" alt=""> </div>
+                        <div class="features">
+                            <ul class="nav">
+                                <li>Number of keyphrases optimized<br><span>(Up to 150)</span></li>
+                                <li><i class="fa fa-check"></i>Web server and on-page analysis &amp; reporting them
+                                    on your site</li>
+                                <li><i class="fa fa-check"></i>Meta tags <span>(Title &amp; description)</span>
+                                    Website conversion analysis implement <span>(Custom)</span></li>
+                            </ul>
+                        </div>
+                        <div class="action"> <a href="#" class="btn btn-default">Start Today</a> </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2 col-xxs-12">
+                    <div class="pricing--item">
+                        <div class="title">
+                            <h3 class="h3">Ecommerce Plan</h3>
+                            <h4 class="h4">($99.99/Month)</h4>
+                        </div>
+                        <div class="icon"> <img src="{% static 'img/pricing-img/icon-03.png' %}" alt=""> </div>
+                        <div class="features">
+                            <ul class="nav">
+                                <li>Number of keyphrases optimized<br><span>(Up to 300)</span></li>
+                                <li><i class="fa fa-check"></i>Web server and on-page analysis &amp; reporting them
+                                    on your site</li>
+                                <li><i class="fa fa-check"></i>Meta tags <span>(Title &amp; description)</span>
+                                    Website conversion analysis implement <span>(Custom)</span></li>
+                            </ul>
+                        </div>
+                        <div class="action"> <a href="#" class="btn btn-default">Start Today</a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+
+    <div class="faq--section pd--100-0-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 pbottom--60">
+                    <div class="faq--content">
+                        <div class="section--title section--title-left">
+                            <h2 class="h2">Let Us Help You Grow Your Business Through The Web.</h2>
+                        </div>
+                        <div class="sub-title">
+                            <p>Fill in the form right side and we'll contact you shortly.</p>
+                        </div>
+                        <div class="body">
+                            <p>It is a long established fact that a reader will be distracted by the readable
+                                content of a page when looking at its layout. The point of using Lorem Ipsum is that
+                                it has a more-or-less normal distribution of letters, as opposed to using 'Content
+                                here, content here', making it look like readable English. Many desktop publishing
+                                packages and web page editors now many web sites still in their infancy.</p>
+                            <p>Lorem Ipsum a long established fact that a reader will be distracted by the readable
+                                content of a page when looking at its layout. The point of using Lorem Ipsum is that
+                                it has a more-or-less normal distribution of letters, as opposed to using 'Content
+                                here, content here', making it look like readable English. Many desktop publishing
+                                packages and web page editors now many web sites still in their infancy.</p>
+                        </div>
+                        <div class="action"> <a href="#" class="btn btn-default">Learn More</a> </div>
+                    </div>
+                </div>
+                <div class="col-md-6 pbottom--60">
+                    <div class="faq--form">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <div class="title">
+                                    <h2 class="h4">Fill the form below and we'll contact you shortly.</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="https://themelooks.us/demo/seocrack/html/preview/forms/faq-form.php"
+                            data-form="ajax">
+                            <div class="status"></div>
+                            <div class="row">
+                                <div class="col-xs-6 col-xxs-12">
+                                    <div class="form-group"> <label> <span>Website</span> <input type="text"
+                                                name="website" class="form-control" required> </label> </div>
+                                </div>
+                                <div class="col-xs-6 col-xxs-12">
+                                    <div class="form-group"> <label> <span>Name</span> <input type="text"
+                                                name="name" class="form-control" required> </label> </div>
+                                </div>
+                                <div class="col-xs-6 col-xxs-12">
+                                    <div class="form-group"> <label> <span>E-mail</span> <input type="email"
+                                                name="email" class="form-control" required> </label> </div>
+                                </div>
+                                <div class="col-xs-6 col-xxs-12">
+                                    <div class="form-group"> <label> <span>Phone</span> <input type="text"
+                                                name="phone" class="form-control" required> </label> </div>
+                                </div>
+                                <div class="col-xs-6 col-xxs-12">
+                                    <div class="form-group"> <label> <span>Company</span> <input type="text"
+                                                name="company" class="form-control" required> </label> </div>
+                                </div>
+                                <div class="col-xs-6 col-xxs-12">
+                                    <div class="form-group"> <label> <span>Budget For This Project</span> <input
+                                                type="text" name="budget" class="form-control" required> </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group"> <label> <span>Put Your Ideas (Optional)</span>
+                                            <textarea name="message" class="form-control"></textarea> </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12"> <button type="submit" class="btn btn-block btn-default">Hear
+                                        From An Expert</button> </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="testimonial--section pd--100-0 bg--overlay-50" data-bg-img="img/testimonial-img/bg.jpg">
+        <div class="container">
+            <div class="section--title">
+                <h2 class="h2">Reviews &amp; Our Trusted Clients</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="testimonial--feedbacks">
+                        <div class="testimonial--clients owl-carousel" data-owl-items="3" data-owl-margin="60"
+                            data-increment="1" data-owl-responsive='{"0":{"margin": 30}, "481":{"margin": 60}}'>
+                            <div class="item" data-target="#testimonialInfoTab01"> <img
+                                    src="img/testimonial-img/client-01.jpg" alt=""> </div>
+                            <div class="item" data-target="#testimonialInfoTab02"> <img
+                                    src="img/testimonial-img/client-02.jpg" alt=""> </div>
+                            <div class="item" data-target="#testimonialInfoTab03"> <img
+                                    src="img/testimonial-img/client-03.jpg" alt=""> </div>
+                        </div>
+                        <div class="testimonial--info">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="testimonialInfoTab01">
+                                    <div class="item">
+                                        <div class="header">
+                                            <div class="title">
+                                                <h3 class="h4">Daniel Duncan</h3>
+                                            </div>
+                                            <div class="sub-title">
+                                                <p>Developer, Australia</p>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <blockquote>
+                                                <p>The point of using Lorem Ipsum is that it has a more-or-less
+                                                    normal distribution of letters, as opposed to using 'Content
+                                                    here, content here', making it look like readable English. Many
+                                                    desktop publishing packages and web page There are many
+                                                    variations of passages of Lorem Ipsum available, but the
+                                                    majority have suffered alteration.</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="testimonialInfoTab02">
+                                    <div class="item">
+                                        <div class="header">
+                                            <div class="title">
+                                                <h3 class="h4">Era Elizabeth</h3>
+                                            </div>
+                                            <div class="sub-title">
+                                                <p>Developer, Australia</p>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <blockquote>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                    Laudantium rerum, dolores explicabo quas consequatur ex aliquid,
+                                                    eligendi ea ipsum, cumque ab quo excepturi quaerat sit eum neque
+                                                    alias cupiditate. Magnam sint ducimus, distinctio natus
+                                                    molestiae tempora debitis cumque animi obcaecati nam quo atque
+                                                    quam perspiciatis.</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="testimonialInfoTab03">
+                                    <div class="item">
+                                        <div class="header">
+                                            <div class="title">
+                                                <h3 class="h4">Randy Munoz</h3>
+                                            </div>
+                                            <div class="sub-title">
+                                                <p>Developer, Australia</p>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <blockquote>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                    Nesciunt dignissimos, asperiores aspernatur, cupiditate aliquam
+                                                    nisi perspiciatis totam quam beatae fugiat voluptate, magnam
+                                                    nihil officiis excepturi optio est nostrum, tenetur quo.
+                                                    Obcaecati ex, officiis numquam nisi animi quibusdam consequuntur
+                                                    esse magnam. Ut quo aliquid voluptas.</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial--brands owl-carousel mtop--60" data-owl-items="6" data-owl-margin="30"
+                data-owl-responsive='{"0":{"items": "2"}, "768":{"items": "4"}, "992":{"items": "6"}}'>
+                <div class="item"> <img src="img/testimonial-img/brand-01.jpg" alt=""> </div>
+                <div class="item"> <img src="img/testimonial-img/brand-02.jpg" alt=""> </div>
+                <div class="item"> <img src="img/testimonial-img/brand-03.jpg" alt=""> </div>
+                <div class="item"> <img src="img/testimonial-img/brand-04.jpg" alt=""> </div>
+                <div class="item"> <img src="img/testimonial-img/brand-05.jpg" alt=""> </div>
+                <div class="item"> <img src="img/testimonial-img/brand-06.jpg" alt=""> </div>
+            </div>
+            <div class="section--footer text-center mtop--40"> <a href="#" class="btn btn-default">Become a Happy
+                    Client</a> </div>
+        </div>
+    </div>
+    <div class="subscribe--section pd--100-0">
+        <div class="container">
+            <div class="section--title">
+                <h2 class="h2">Subscribe To Our Newsletter</h2>
+            </div>
+            <div class="subscribe--form">
+                <p>We will never spam you, or sell your email to third parties.</p>
+                <p>By clicking "Subcribe Now" you accept our Terms of Use and Privacy Policy.</p>
+                <form
+                    action="https://themelooks.us13.list-manage.com/subscribe/post?u=79f0b132ec25ee223bb41835f&amp;id=f4e0e93d1d"
+                    method="post" name="mc-embedded-subscribe-form" target="_blank" data-form="mailchimpAjax">
+                    <div class="form-group"> <input type="email" name="EMAIL"
+                            placeholder="Enter Your E-mail Address" class="form-control" autocomplete="off"
+                            required> </div>
+                    <p class="status"></p><button type="submit" class="btn btn-default">Subscribe Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

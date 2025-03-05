@@ -1,0 +1,53 @@
+{% extends 'base/base.html' %}
+{% block body %}
+
+<div class="container my-4">
+    <h2>Add and edit your SMTP credentials :</h2>
+
+</div>
+
+<div class="container my-3">
+    <div class="card">
+        <div class="card-body">
+            <form action="/smtp/update/{{smtpedit.id}}" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <h5>SMTP HOST</h5>
+                    <input type="text" class="form-control" id="notetitle" name="ehost"
+                        value="{{ smtpedit.EMAIL_HOST }}" required>
+
+                </div>
+                <div class="mb-3">
+                    <h5>SMTP EMAIL HOST USER</h5>
+                    <input type="text" class="form-control" id="notetitle" name="ehostuser"
+                        value="{{ smtpedit.EMAIL_HOST_USER }}" required>
+
+                </div>
+
+                <div class="mb-3">
+                    <h5>SMTP EMAIL HOST PASSWORD</h5>
+                    <input type="password" class="form-control" id="notetitle" name="epass"
+                        value="{{ smtpedit.EMAIL_HOST_PASSWORD }}" required>
+
+                </div>
+
+                <div class="mb-3">
+                    <h5>SMTP EMAIL PORT</h5>
+                    <input type="text" class="form-control" id="notetitle" name="eport"
+                        value="{{ smtpedit.EMAIL_PORT }}" required>
+
+                </div>
+
+                <div class="mb-3">
+                    <h5>SMTP EMAIL USE TLS</h5>
+                    <input type="text" class="form-control" id="notetitle" name="etls"
+                        value="{{ smtpedit.EMAIL_USE_TLS }}" required>
+
+                </div>
+
+                <button class="btn btn-primary" id="addnote" type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

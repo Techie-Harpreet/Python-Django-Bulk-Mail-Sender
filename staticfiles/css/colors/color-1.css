@@ -1,0 +1,138 @@
+/*
+
+[Theme Color Stylesheet]
+
+Project     : SEOCrack - Responsive SEO and SMM HTML Template
+Author      : themelooks.com
+Author URI  : https://themeforest.net/user/themelooks
+
+*/
+
+.cart--widget .nav li .info p,
+.checkout--info .title .fa,
+.checkout--info .title a.active,
+.checkout--info .title a:hover,
+.checkout--order-info .panel-group .panel-title label,
+.coming-soon--content .copyright p a,
+.comment--form .rating .br-widget a:after,
+.contact--widget .info li span,
+.dropdown-menu>li.active>a,
+.dropdown-menu>li.active>a:focus,
+.dropdown-menu>li.active>a:hover,
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover,
+.f0f--content .title .h1 span,
+.footer--copyright p a,
+.gallery--details ul li:before,
+.header--nav-links>.megamenu>.dropdown-menu>.nav>li.active>a,
+.header--nav-links>li.active>a,
+.header--topbar .nav>li>a span,
+.owl-nav>div,
+.pricing--item .features .nav li .fa,
+.pricing--item .features .nav li span,
+.product--item .price,
+.product--quantity .ui-spinner-button:active:before,
+.product-single--summery .price,
+.search--widget .input-group-btn button:hover,
+.service--details .title .h2,
+.tab-nav--widget .nav li.active a,
+.team--member:hover .info .h4,
+a.active,
+a:focus,
+a:hover {
+    color: #00b249
+}
+
+.about--skills .progress-bar,
+.bg--color-theme,
+.btn-default.active.focus:before,
+.btn-default.active:focus:before,
+.btn-default.active:hover:before,
+.btn-default:before,
+.cart--items .table tbody tr td .img:before,
+.cart--widget .nav li .img a:before,
+.checker--section:before,
+.coming-soon--content .subscribe form .btn:before,
+.feature--item .icon:before,
+.feature--item:before,
+.gallery--item .img a:before,
+.header--navbar .navbar-toggle.collapsed:before,
+.intro--video .fa:after,
+.intro--video a:before,
+.pagination>li.active>a:before,
+.pagination>li.active>a:focus:before,
+.pagination>li.active>a:hover:before,
+.pagination>li.active>span:before,
+.pagination>li.active>span:focus:before,
+.pagination>li.active>span:hover:before,
+.pagination>li>a:focus:before,
+.pagination>li>a:hover:before,
+.pagination>li>span:focus:before,
+.pagination>li>span:hover:before,
+.preloader,
+.pricing--item .icon:after,
+.pricing--item.active .icon:before,
+.pricing--item.active .title:before,
+.pricing--item:hover .icon:before,
+.pricing--item:hover .title:before,
+.product--item .img .buttons li a:hover:before,
+.product--item .offer,
+.product-single--img .owl-carousel .item a:before,
+.product-single--tabs .tabs--nav>li.active>a:before,
+.sidebar--widgets .tags--widget li a:focus,
+.sidebar--widgets .tags--widget li a:hover,
+.team--member .img .social:before,
+.underline:before {
+    background-color: #00b249
+}
+
+::-moz-selection {
+    background-color: #00b249
+}
+
+::selection {
+    background-color: #fd8469
+}
+
+.btn-default,
+.btn-default.active.focus,
+.btn-default.active:focus,
+.btn-default.active:hover,
+.feature--item,
+.feature--item .icon,
+.form-control:focus,
+.header--nav-links>li.active>a,
+.header--nav-links>li.open>a,
+.header--nav-links>li.open>a:focus,
+.header--nav-links>li.open>a:hover,
+.header--nav-links>li>a:focus,
+.header--nav-links>li>a:hover,
+.header--navbar .navbar-toggle.collapsed,
+.intro--video a:focus,
+.intro--video a:hover,
+.pagination>li.active>a,
+.pagination>li.active>a:focus,
+.pagination>li.active>a:hover,
+.pagination>li.active>span,
+.pagination>li.active>span:focus,
+.pagination>li.active>span:hover,
+.pagination>li>a,
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span,
+.pagination>li>span:focus,
+.pagination>li>span:hover,
+.product--item .img .buttons li a,
+.product--quantity .btn.active:not(:hover),
+.product--quantity .ui-spinner,
+.product-single--tabs .tabs--nav>li>a,
+.search--widget input:focus+.input-group-btn:before,
+.service--item .header,
+.tab-nav--widget,
+.testimonial--clients .owl-item.active+.active .item {
+    border-color: #00b249
+}
+
+.coming-soon--content .countdown ul li {
+    border-bottom-color: #00b249
+}
